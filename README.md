@@ -34,3 +34,7 @@ This is a basic console application game. The below points summarises the curren
  
 #### Logging
  Basic java logging has been provided. The log file can be found at `src/main/resources/game_application.log`
+ 
+#### Sonar
+ Sonar can be run in local ( _set up sonar in local - https://docs.sonarqube.org/latest/setup/get-started-2-minutes/_) by executing below command. 
+ `mvn sonar:sonar -Dsonar.host.url=http://localhost:9000`
