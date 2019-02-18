@@ -22,7 +22,7 @@ This is a basic console application game. The below points summarises the curren
  - Programming to interface has been followed through out for extensibility.
  - Application uses **command design pattern** to run various game operations
  - Command creation is via command factory.
- - The project uses **Factory Design Pattern** and **BuilderPattern** for object creation
+ - The project uses **Factory Design Pattern**, **BuilderPattern** and **Singleton Pattern** for object creation
  - Opponent and Player Fight are controlled by **StrategyPattern**
  - Terminal interface implementation controls all read and write to console
  - UI components are packaged in `ui` package.
