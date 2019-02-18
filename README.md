@@ -38,3 +38,15 @@ This is a basic console application game. The below points summarises the curren
 #### Sonar
  Sonar can be run in local ( _set up sonar in local - https://docs.sonarqube.org/latest/setup/get-started-2-minutes/_) by executing below command. 
  `mvn sonar:sonar -Dsonar.host.url=http://localhost:9000`
+
+#### Screenshots
+- Start Game
+  ![Start Game](src/main/resources/screenshots/StartGame.png "Start Game")
+- Create Player
+  ![Create Player](src/main/resources/screenshots/CreatePlayer.png "Create Player")
+- SelectWorld
+  ![Select World](src/main/resources/screenshots/SelectWorld.png "Select world")
+- Select Opponent  
+  ![Select Opponent](src/main/resources/screenshots/SelectOpponent.png "Select Opponent")
+- Fight Opponent
+  ![Fight Opponent](src/main/resources/screenshots/FightOpponent.png "Fight Opponent")
