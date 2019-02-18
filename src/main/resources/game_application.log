@@ -1,0 +1,38 @@
+Feb 18, 2019 1:06:13 AM com.superheroworld.game.Application run
+INFO: Starting Application...
+Feb 18, 2019 1:08:17 AM com.superheroworld.game.Application run
+INFO: Starting Application...
+Feb 18, 2019 1:08:17 AM com.superheroworld.game.Application run
+INFO: Starting executing command - WELCOME
+Feb 18, 2019 1:08:17 AM com.superheroworld.game.Application run
+INFO: Completed executing command - WELCOME
+Feb 18, 2019 1:08:17 AM com.superheroworld.game.Application run
+INFO: Starting executing command - STARTGAME
+Feb 18, 2019 1:08:22 AM com.superheroworld.game.Application run
+INFO: Completed executing command - STARTGAME
+Feb 18, 2019 1:08:22 AM com.superheroworld.game.Application run
+INFO: Starting executing command - NEWGAME
+Feb 18, 2019 1:08:24 AM com.superheroworld.game.Application run
+INFO: Completed executing command - NEWGAME
+Feb 18, 2019 1:08:24 AM com.superheroworld.game.Application run
+INFO: Starting executing command - SELECTWORLD
+Feb 18, 2019 1:08:26 AM com.superheroworld.game.Application run
+INFO: Completed executing command - SELECTWORLD
+Feb 18, 2019 1:08:26 AM com.superheroworld.game.Application run
+INFO: Starting executing command - SELECTOPPONENTS
+Feb 18, 2019 1:08:28 AM com.superheroworld.game.Application run
+INFO: Completed executing command - SELECTOPPONENTS
+Feb 18, 2019 1:08:28 AM com.superheroworld.game.Application run
+INFO: Starting executing command - FIGHT
+Feb 18, 2019 1:08:30 AM com.superheroworld.game.Application run
+INFO: Completed executing command - FIGHT
+Feb 18, 2019 1:08:30 AM com.superheroworld.game.Application run
+INFO: Starting executing command - SELECTOPPONENTS
+Feb 18, 2019 1:08:32 AM com.superheroworld.game.Application run
+INFO: Completed executing command - SELECTOPPONENTS
+Feb 18, 2019 1:08:32 AM com.superheroworld.game.Application run
+INFO: Starting executing command - EXITGAME
+Feb 18, 2019 1:08:32 AM com.superheroworld.game.Application run
+INFO: Completed executing command - EXITGAME
+Feb 18, 2019 1:08:32 AM com.superheroworld.game.Application run
+INFO: Exiting Application...
