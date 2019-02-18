@@ -104,17 +104,6 @@ public class Context implements Serializable {
     protected Object readResolve() {
         return getInstance();
     }
-//
-//    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-//        // Loading game should update the existing context other than replacing,
-//        // so as to ensure all the references are also updated
-//        ois.defaultReadObject();
-//        INSTANCE.player = this.player;
-//        INSTANCE.currentWorld = this.currentWorld;
-//        INSTANCE.currentOpponent = this.currentOpponent;
-//        INSTANCE.commandHistory = this.commandHistory;
-//        INSTANCE.nextCommandType = this.nextCommandType;
-//    }
 
     private void setCommandHistory(CommandType command) {
         if (command == STARTGAME) {
