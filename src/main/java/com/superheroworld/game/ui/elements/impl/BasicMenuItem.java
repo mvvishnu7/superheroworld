@@ -5,8 +5,8 @@ import com.superheroworld.game.ui.elements.IconInfo;
 
 public class BasicMenuItem implements MenuItem {
 
-    private String text;
     private String value;
+    private String selectionValue;
     private IconInfo iconInfo;
 
     @Override
@@ -21,21 +21,21 @@ public class BasicMenuItem implements MenuItem {
 
     @Override
     public String getValue() {
-        return text;
-    }
-
-    @Override
-    public void setValue(String text) {
-        this.text = text;
-    }
-
-    @Override
-    public String getSelectionValue() {
         return value;
     }
 
     @Override
+    public void setValue(String text) {
+        this.value = text;
+    }
+
+    @Override
+    public String getSelectionValue() {
+        return selectionValue;
+    }
+
+    @Override
     public void setSelectionValue(String value) {
-        this.value = value;
+        this.selectionValue = value;
     }
 }

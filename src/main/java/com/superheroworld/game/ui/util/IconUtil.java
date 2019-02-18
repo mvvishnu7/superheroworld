@@ -96,18 +96,12 @@ public class IconUtil {
             int maxColLength = 0;
             String absolutePath = FileUtil.getAbsoluteFilePath(fileName);
             File file = new File(absolutePath);
-            int lineCount = Math.toIntExact(Files.lines(file.toPath()).count());
+            int lineCount = getLineCount(file);
 
             int rowCount = label != null ? lineCount + 1 : lineCount;
             myArray = new char[Math.toIntExact(rowCount)][];
 
-            Scanner scanner = new Scanner(file);
-            for (int row = 0; scanner.hasNextLine() && row < lineCount; row++) {
-                myArray[row] = scanner.nextLine().toCharArray();
-                if (maxColLength < myArray[row].length) {
-                    maxColLength = myArray[row].length;
-                }
-            }
+            maxColLength = getMaxColLength(myArray, maxColLength, file, lineCount);
 
             if (maxColLength % 2 != 0) {
                 LOG.log(Level.SEVERE, "Please set max width of impl(" + fileName + ") as a even number. Current length: " + maxColLength);
@@ -134,5 +128,21 @@ public class IconUtil {
             throw new IconReadUnCheckedException("Error while reading icon -" + fileName);
         }
         return myArray;
+    }
+
+    private static int getLineCount(File file) throws IOException {
+        return Math.toIntExact(Files.lines(file.toPath()).count());
+    }
+
+    private static int getMaxColLength(char[][] myArray, int maxColLength, File file, int lineCount) throws FileNotFoundException {
+        try(Scanner scanner = new Scanner(file)) {
+            for (int row = 0; scanner.hasNextLine() && row < lineCount; row++) {
+                myArray[row] = scanner.nextLine().toCharArray();
+                if (maxColLength < myArray[row].length) {
+                    maxColLength = myArray[row].length;
+                }
+            }
+        }
+        return maxColLength;
     }
 }
