@@ -15,8 +15,8 @@ This is a basic console application game. The below points summarises the curren
     - Reload saved game on start up
 
 ### How to run
-build using `mvn clean package`
-run using `java -jar target/super-hero-world-1.0.0-SNAPSHOT.jar` (_snapshot version to be updated as per pom_)
+ - build using `mvn clean package`
+ - run using `java -jar target/super-hero-world-1.0.0-SNAPSHOT.jar` (_snapshot version to be updated as per pom_)
 
 ### Design Principles
  - Programming to interface has been followed through out for extensibility.
