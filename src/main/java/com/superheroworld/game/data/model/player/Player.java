@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import com.superheroworld.game.data.model.world.World;
 
+/**
+ * Represents a Player
+ */
 public interface Player extends Serializable {
     String getName();
 

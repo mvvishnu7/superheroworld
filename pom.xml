@@ -111,6 +111,11 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <excludes>
+                        <exclude>**/model/**</exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -5,6 +5,9 @@ import java.util.List;
 
 import com.superheroworld.game.data.model.opponent.Opponent;
 
+/**
+ * Represents a World
+ */
 public interface World extends Serializable {
 
     WorldType getType();

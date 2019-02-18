@@ -10,6 +10,9 @@ import com.superheroworld.game.logic.command.impl.opponent.FightOpponentCommand;
 import com.superheroworld.game.logic.command.impl.world.SelectOpponentCommand;
 import com.superheroworld.game.logic.command.impl.world.SelectWorldCommand;
 
+/**
+ * Handles Command Object creation
+ */
 public class CommandFactory {
     public static Command getCommand(CommandType commandType) {
         switch (commandType) {

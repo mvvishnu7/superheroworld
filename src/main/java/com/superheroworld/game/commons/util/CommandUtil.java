@@ -11,6 +11,9 @@ import static com.superheroworld.game.commons.Constants.SAVE_GAME_VALUE;
 import static com.superheroworld.game.logic.command.CommandType.EXITGAME;
 import static com.superheroworld.game.logic.command.CommandType.SAVEGAME;
 
+/**
+ * Handles command utility operations
+ */
 public class CommandUtil {
 
     private static final Context CONTEXT = Context.getInstance();
@@ -19,10 +22,21 @@ public class CommandUtil {
         EXIT_GAME_VALUE,
         SAVE_GAME_VALUE);
 
+    /**
+     * Checks if a user response points to a default command
+     *
+     * @param commandValue
+     * @return
+     */
     public static boolean isDefaultCommand(String commandValue) {
         return defaultCommands.contains(commandValue);
     }
 
+    /**
+     * Handles default commands
+     *
+     * @param commandValue
+     */
     public static void handleDefaultCommand(String commandValue) {
         switch (commandValue) {
             case EXIT_GAME_VALUE:

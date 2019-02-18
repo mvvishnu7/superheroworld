@@ -59,7 +59,7 @@ public class FightOpponentCommand extends AbstractCommand {
             IconInfo iconInfo = new IconInfo();
             iconInfo.setLabel("Your experience --> " + player.getExperience() + "\n");
             iconInfo.setRelativePath(fightIconPath);
-            userInterface.printIconHorizontally(Collections.singletonList(iconInfo), 1);
+            userInterface.printIconHorizontally(Collections.singletonList(iconInfo));
 
             getContext().setNextCommandType(SELECTOPPONENTS);
             userInterface.printMessage(Collections.singletonList(PAGE_SEPARATOR));

@@ -18,6 +18,9 @@ import static com.superheroworld.game.logic.command.CommandType.SAVEGAME;
 import static com.superheroworld.game.logic.command.CommandType.STARTGAME;
 import static com.superheroworld.game.logic.command.CommandType.WELCOME;
 
+/**
+ * Holds the current context of the game
+ */
 public class Context implements Serializable {
 
     private static final long serialVersionUID = 388129809130726178L;
@@ -34,6 +37,11 @@ public class Context implements Serializable {
         commandHistory = new Stack<>();
     }
 
+    /**
+     * returns singleton object
+     *
+     * @return
+     */
     public static Context getInstance() {
         if (INSTANCE == null) {
             synchronized (Context.class) {
@@ -96,17 +104,17 @@ public class Context implements Serializable {
     protected Object readResolve() {
         return getInstance();
     }
-
-    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        // Loading game should update the existing context other than replacing,
-        // so as to ensure all the references are also updated
-        ois.defaultReadObject();
-        INSTANCE.player = this.player;
-        INSTANCE.currentWorld = this.currentWorld;
-        INSTANCE.currentOpponent = this.currentOpponent;
-        INSTANCE.commandHistory = this.commandHistory;
-        INSTANCE.nextCommandType = this.nextCommandType;
-    }
+//
+//    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+//        // Loading game should update the existing context other than replacing,
+//        // so as to ensure all the references are also updated
+//        ois.defaultReadObject();
+//        INSTANCE.player = this.player;
+//        INSTANCE.currentWorld = this.currentWorld;
+//        INSTANCE.currentOpponent = this.currentOpponent;
+//        INSTANCE.commandHistory = this.commandHistory;
+//        INSTANCE.nextCommandType = this.nextCommandType;
+//    }
 
     private void setCommandHistory(CommandType command) {
         if (command == STARTGAME) {

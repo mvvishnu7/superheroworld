@@ -53,7 +53,7 @@ public class DefaultUserInterfaceHandler implements UserInterface {
     }
 
     @Override
-    public void printIconHorizontally(List<IconInfo> icons, int iconsPerColumn)
+    public void printIconHorizontally(List<IconInfo> icons)
         throws IconDimensionUnCheckedException, IconNotFoundUnCheckedException, IconReadUnCheckedException {
         IconUtil.displayIcons(icons);
     }

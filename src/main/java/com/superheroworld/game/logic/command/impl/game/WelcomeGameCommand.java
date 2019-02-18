@@ -11,6 +11,9 @@ import com.superheroworld.game.ui.util.IconUtil;
 import static com.superheroworld.game.logic.command.CommandType.STARTGAME;
 import static com.superheroworld.game.logic.command.CommandType.WELCOME;
 
+/**
+ * Handles Welcome Game operation
+ */
 public class WelcomeGameCommand extends AbstractCommand {
 
     public WelcomeGameCommand() {
@@ -26,7 +29,7 @@ public class WelcomeGameCommand extends AbstractCommand {
         IconInfo welcomeIcon = new IconInfo();
         welcomeIcon.setRelativePath(filePath);
 
-        userInterface.printIconHorizontally(Collections.singletonList(welcomeIcon), 1);
+        userInterface.printIconHorizontally(Collections.singletonList(welcomeIcon));
         getContext().setNextCommandType(STARTGAME);
 
     }

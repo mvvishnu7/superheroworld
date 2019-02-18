@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,37 +13,42 @@ import java.util.logging.Logger;
 import com.superheroworld.game.exception.FileReadError;
 import com.superheroworld.game.exception.FileWriteError;
 
+/**
+ * Utility file for file operations
+ */
 public class FileUtil {
 
     private static final Logger LOG = Logger.getLogger(FileUtil.class.getName());
 
+    private FileUtil() {
+    }
+
+    /**
+     * Write's an object to a file
+     *
+     * @param object
+     * @param fileName
+     * @throws FileWriteError
+     */
     public static void writeToFile(Object object, String fileName) throws FileWriteError {
-        FileOutputStream fileOutputStream = null;
-        ObjectOutputStream objectOutputStream = null;
-        try {
-            fileOutputStream = new FileOutputStream(fileName);
-            objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        try (FileOutputStream fileOutputStream = new FileOutputStream(fileName);
+             ObjectOutput objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
             objectOutputStream.writeObject(object);
         } catch (IOException e) {
             LOG.log(Level.SEVERE, "Error occurred while writing file" + fileName, e.getCause());
             throw new FileWriteError("Unable to write to file - " + fileName);
-        } finally {
-            try {
-                assert objectOutputStream != null;
-                objectOutputStream.close();
-                fileOutputStream.close();
-            } catch (IOException e) {
-                LOG.log(Level.SEVERE, "Error occurred while closing file stream" + fileName, e.getCause());
-                throw new FileWriteError("Unable to write to file - " + fileName);
-            }
         }
     }
 
+    /**
+     * Reads from a file
+     *
+     * @param fileName
+     * @return
+     */
     public static Object readFromFile(String fileName) {
-        FileInputStream fis;
-        try {
-            fis = new FileInputStream(fileName);
-            ObjectInputStream ois = new ObjectInputStream(fis);
+        try (FileInputStream fis = new FileInputStream(fileName);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
             return ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             throw new FileReadError("Unable to read file - " + fileName);

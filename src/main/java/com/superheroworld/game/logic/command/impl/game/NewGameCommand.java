@@ -13,6 +13,9 @@ import static com.superheroworld.game.commons.Constants.PAGE_SEPARATOR;
 import static com.superheroworld.game.logic.command.CommandType.NEWGAME;
 import static com.superheroworld.game.logic.command.CommandType.SELECTWORLD;
 
+/**
+ * Handles New Game operation
+ */
 public class NewGameCommand extends AbstractCommand {
 
     public NewGameCommand() {

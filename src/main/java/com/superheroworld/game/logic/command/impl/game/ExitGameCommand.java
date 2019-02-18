@@ -7,6 +7,9 @@ import com.superheroworld.game.logic.command.CommandType;
 import com.superheroworld.game.ui.elements.UserInterface;
 import com.superheroworld.game.ui.elements.impl.DefaultUserInterfaceHandler;
 
+/**
+ * Handles Game Exit operation
+ */
 public class ExitGameCommand extends AbstractCommand {
 
     public ExitGameCommand() {

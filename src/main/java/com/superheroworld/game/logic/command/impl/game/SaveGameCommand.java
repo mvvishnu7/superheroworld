@@ -10,6 +10,9 @@ import com.superheroworld.game.logic.command.CommandType;
 import com.superheroworld.game.ui.elements.UserInterface;
 import com.superheroworld.game.ui.elements.impl.DefaultUserInterfaceHandler;
 
+/**
+ * Handles Game Saving operation
+ */
 public class SaveGameCommand extends AbstractCommand {
     public SaveGameCommand() {
         super(CommandType.SAVEGAME);

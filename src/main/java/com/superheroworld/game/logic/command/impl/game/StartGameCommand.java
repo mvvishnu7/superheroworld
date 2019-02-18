@@ -21,6 +21,9 @@ import static com.superheroworld.game.logic.command.CommandType.LOADGAME;
 import static com.superheroworld.game.logic.command.CommandType.NEWGAME;
 import static com.superheroworld.game.logic.command.CommandType.STARTGAME;
 
+/**
+ * Handles Game Start operation
+ */
 public class StartGameCommand extends AbstractCommand {
     public StartGameCommand() {
         super(STARTGAME);

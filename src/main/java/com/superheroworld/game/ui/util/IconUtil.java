@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 import com.superheroworld.game.commons.util.FileUtil;
 import com.superheroworld.game.exception.IconDimensionUnCheckedException;
@@ -23,6 +24,9 @@ public class IconUtil {
     private static Logger LOG = Logger.getLogger(IconUtil.class.getName());
 
     private static final Terminal TERMINAL = DefaultTerminal.getInstance();
+
+    private IconUtil() {
+    }
 
     public static String getIconRelativePath(String fileName) {
         return File.separator + "icons"
@@ -131,11 +135,13 @@ public class IconUtil {
     }
 
     private static int getLineCount(File file) throws IOException {
-        return Math.toIntExact(Files.lines(file.toPath()).count());
+        try (Stream<String> fileLines = Files.lines(file.toPath())) {
+            return Math.toIntExact(fileLines.count());
+        }
     }
 
     private static int getMaxColLength(char[][] myArray, int maxColLength, File file, int lineCount) throws FileNotFoundException {
-        try(Scanner scanner = new Scanner(file)) {
+        try (Scanner scanner = new Scanner(file)) {
             for (int row = 0; scanner.hasNextLine() && row < lineCount; row++) {
                 myArray[row] = scanner.nextLine().toCharArray();
                 if (maxColLength < myArray[row].length) {

@@ -73,7 +73,7 @@ public class BasicMenu extends AbstractUserInterfaceElement<MenuItem> implements
             iconInfoList.add(menuItem.getIconInfo());
         });
 
-        userInterface.printIconHorizontally(iconInfoList, 1);
+        userInterface.printIconHorizontally(iconInfoList);
 
         getTerminal().writeNewLine(CHOICE_PROMPT);
         getTerminal().lineBreak();
@@ -85,8 +85,9 @@ public class BasicMenu extends AbstractUserInterfaceElement<MenuItem> implements
             response -> this.selectedMenuItem = menuItems.stream().filter(
                 menuItem -> menuItem.getSelectionValue().equalsIgnoreCase(userResponse))
                 .findAny().orElse(null));
-        Optional.ofNullable(this.selectedMenuItem)
-            .orElseThrow(() -> new InvalidUserInputException("Invalid selection on menu"));
+        if (!Optional.ofNullable(this.selectedMenuItem).isPresent()) {
+            throw new InvalidUserInputException("Invalid selection on menu");
+        }
     }
 
 

@@ -3,8 +3,17 @@ package com.superheroworld.game.data.mapper;
 import com.superheroworld.game.Context;
 import com.superheroworld.game.data.model.ApplicationState;
 
+/**
+ * Maps application state to Context and vice versa
+ */
 public class ContextApplicationStateMapper {
 
+    /**
+     * Creates Application State Object from Context
+     *
+     * @param context
+     * @return
+     */
     public static ApplicationState makeApplicationState(Context context) {
 
         ApplicationState.ApplicationStateBuilder applicationStateBuilder =
@@ -17,6 +26,12 @@ public class ContextApplicationStateMapper {
         return applicationStateBuilder.build();
     }
 
+    /**
+     * Updates a Context object with the Application State object passed
+     *
+     * @param context
+     * @param applicationState
+     */
     public static void updateContext(Context context, ApplicationState applicationState) {
         context.setPlayer(applicationState.getPlayer());
         context.setNextCommandType(applicationState.getNextCommandType());

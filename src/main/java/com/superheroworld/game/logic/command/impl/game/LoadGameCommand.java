@@ -13,6 +13,9 @@ import com.superheroworld.game.ui.elements.impl.DefaultUserInterfaceHandler;
 import static com.superheroworld.game.logic.command.CommandType.LOADGAME;
 import static com.superheroworld.game.commons.Constants.PAGE_SEPARATOR;
 
+/**
+ * Handles Game loading operation
+ */
 public class LoadGameCommand extends AbstractCommand {
 
     public LoadGameCommand() {

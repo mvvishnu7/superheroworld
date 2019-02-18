@@ -13,7 +13,6 @@ import com.superheroworld.game.logic.command.CommandType;
 import com.superheroworld.game.logic.command.impl.game.WelcomeGameCommand;
 import com.superheroworld.game.ui.elements.impl.DefaultUserInterfaceHandler;
 
-import static org.mockito.Matchers.anyInt;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
@@ -39,7 +38,7 @@ public class WelcomeGameCommandTest {
     public void testExecute() {
         welcomeGameCommand.execute();
 
-        verify(userInterfaceMock, times(1)).printIconHorizontally(anyObject(), anyInt());
+        verify(userInterfaceMock, times(1)).printIconHorizontally(anyObject());
         Assert.assertEquals(CommandType.STARTGAME, Context.getInstance().getNextCommandType());
     }
 }
