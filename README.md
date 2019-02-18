@@ -1,16 +1,16 @@
 # superheroworld
 A java console game
 
-The game is a basic console application for console game. The below point summarises the current capabilities.  
+This is a basic console application game. The below points summarises the current capabilities.  
 
-- As a player I want to create a character
-  - User given options to enter the player name
- - As a player I want to explore
+- As a player I can create a character
+  - User given options to enter the player name and create a player
+ - As a player I can explore
     - User gets option to explore different worlds(eg Earth, Atlantis)
-- As a player I want to gain experience through fighting
+- As a player I can gain experience through fighting
     - Options to fight below opponents in corresponding world(eg Ultron in Earth, Loki in Asgard)
     - Once you fight experience increases
-- As a player I want to save and resume a game
+- As a player I can save and resume a game
     - option to save game any time
     - Reload saved game on start up
 
