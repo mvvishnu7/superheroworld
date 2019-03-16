@@ -71,7 +71,7 @@ public class SelectWorldCommand extends AbstractCommand {
             worldMenuItem.setValue(String.valueOf(worldType));
             worldMenuItem.setSelectionValue(String.valueOf(selectionValue));
 
-            String iconPath = IconUtil.getIconRelativePath(worldType.toString() + "_world.txt");
+            String iconPath = IconUtil.getIconRelativePath(worldType.toString().toLowerCase() + "_world.txt");
             IconInfo iconInfo = new IconInfo();
             iconInfo.setRelativePath(iconPath);
             iconInfo.setLabel("ENTER " + worldMenuItem.getSelectionValue());
